@@ -10,7 +10,7 @@ ref["Date"] = pd.to_datetime(ref["Date"], dayfirst=True)
 # merge both tables
 comparison = pd.merge(calc, ref, on="Date", how="inner")
 
-# Add new columns for reconciliation
+# add new columns for reconciliation
 comparison.columns = ["Date", "Calculated", "Reference"]
 comparison["Difference"] = comparison["Calculated"] - comparison["Reference"]
 
